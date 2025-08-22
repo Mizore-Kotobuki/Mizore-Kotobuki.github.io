@@ -1,3 +1,4 @@
+/* 基础样式 */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/bg.jpg');
+    background-image: url('../images/background.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -33,29 +34,32 @@ body {
     position: relative;
 }
 
-/* 个人信息区域 */
+/* 个人信息区域 - 修改这部分确保横向布局 */
 .profile {
     display: flex;
+    flex-direction: row; /* 强制横向排列 */
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* 头像样式 - 强化圆形效果 */
 .avatar {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 50%; /* 圆形效果 */
     overflow: hidden;
     margin-right: 20px;
     border: 3px solid #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* 防止在小屏幕上缩小 */
 }
 
 .avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 确保图片填满容器 */
 }
 
 .profile-info {
@@ -127,14 +131,32 @@ footer {
     font-size: 0.9rem;
 }
 
-/* 响应式调整 */
+/* 响应式调整 - 修改这部分以保持横向布局 */
 @media (max-width: 768px) {
     .profile {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* 即使在小屏幕上也保持横向 */
+        align-items: center;
     }
     
     .avatar {
-        margin: 0 auto 20px;
+        margin-right: 15px; /* 在小屏幕上减少右边距 */
+        width: 100px; /* 小屏幕上稍微缩小头像 */
+        height: 100px;
+    }
+    
+    .name {
+        font-size: 1.5rem; /* 小屏幕上稍微缩小字体 */
+    }
+    
+    .motto {
+        font-size: 0.9rem;
+    }
+}
+
+/* 超小屏幕的额外调整（如手机竖屏） */
+@media (max-width: 480px) {
+    .avatar {
+        width: 80px;
+        height: 80px;
     }
 }
