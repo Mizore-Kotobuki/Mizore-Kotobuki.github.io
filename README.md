@@ -1,2 +1,2 @@
 # Mizore-Kotobuki.github.io
-琴吹霙のホームページ
+琴吹霙のホームページ[https://mizore-kotobuki.github.io]
